@@ -23,7 +23,7 @@ const pollSchema=new mongoose.Schema({
     type:[optionSchema],
     validate:{
       validator:function(arr){
-        return arr.length>2;
+        return arr.length>=2;
     },
   message:"Minimum 2 options are required"
   }
