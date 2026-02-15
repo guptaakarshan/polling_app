@@ -1,0 +1,1 @@
+A production-ready, full-stack polling application built with the MERN stack featuring real-time vote updates via WebSockets, fairness controls to prevent abuse, and atomic vote handling for concurrent voters.
