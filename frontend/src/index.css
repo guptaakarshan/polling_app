@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 24px;
+  font-size: 28px;
+}
+
+h2 {
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+  font-family: inherit;
+}
+
+button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover:not(:disabled) {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+button.secondary {
+  background: #6c757d;
+  margin-left: 12px;
+}
+
+button.secondary:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+button.danger {
+  background: #dc3545;
+}
+
+button.danger:hover:not(:disabled) {
+  background: #c82333;
+}
+
+.option-input-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.option-input-group input {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.option-input-group button {
+  padding: 12px 16px;
+}
+
+.poll-option {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.poll-option:hover:not(.disabled) {
+  border-color: #667eea;
+  transform: translateX(4px);
+}
+
+.poll-option.selected {
+  border-color: #667eea;
+  background: #f0f4ff;
+}
+
+.poll-option.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.poll-option-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.poll-option-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.poll-option-votes {
+  font-size: 14px;
+  color: #666;
+  font-weight: 600;
+}
+
+.poll-option-bar {
+  height: 8px;
+  background: #667eea;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.poll-option-percentage {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+  position: relative;
+  z-index: 2;
+}
+
+.share-link {
+  background: #f8f9fa;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px 0;
+}
+
+.share-link p {
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 600;
+}
+
+.share-link-input {
+  display: flex;
+  gap: 8px;
+}
+
+.share-link-input input {
+  flex: 1;
+  margin-bottom: 0;
+  background: white;
+}
+
+.error {
+  background: #fee;
+  border: 2px solid #fcc;
+  border-radius: 8px;
+  padding: 12px;
+  color: #c00;
+  margin-bottom: 16px;
+}
+
+.success {
+  background: #efe;
+  border: 2px solid #cfc;
+  border-radius: 8px;
+  padding: 12px;
+  color: #0a0;
+  margin-bottom: 16px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 18px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 12px;
+}
+
+.status-badge.live {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.expired {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.total-votes {
+  text-align: center;
+  margin: 20px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.home-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s;
+}
+
+.home-link:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
